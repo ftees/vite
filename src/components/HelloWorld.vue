@@ -1,5 +1,7 @@
 <template>
-  <div class="gift">
+  
+  <div class="gift" @click="onClick">
+  
     <div class="gift__bow">
       <div class="gift__bow-left"></div>
       <div class="gift__bow-right"></div>
@@ -15,16 +17,68 @@
     <div class="gift__star gift__star--4"></div>
     <div class="gift__star gift__star--5"></div>
   </div>
+  <AudioPlayer
+    :option="{
+        src: getMusicUrl(),
+        isPlaying: true
+   }"
+  />
 </template>
 
 <script setup>
-import { defineProps, reactive } from "vue";
+import { defineProps, reactive, ref, onMounted } from "vue";
+import Swal from 'sweetalert2'
+import AudioPlayer from 'vue3-audio-player'
+import 'vue3-audio-player/dist/style.css'
 
 defineProps({
   msg: String,
 });
 
-const state = reactive({ count: 0 });
+
+const inputValue = ref('')
+
+onMounted(() => {
+ 
+     AudioPlayer.isPlaying = true
+     
+   });
+
+const onClick = () => {
+ 
+  const { value: ipAddress } =  Swal.fire({
+  title: 'Enter password to open the gift',
+  input: 'password',
+  inputLabel: '(Hint: 6 numbers)',
+  inputValue: inputValue,
+  showCancelButton: true,
+  inputValidator: (value) => {
+    if (value !== '120722') {
+      return 'Khoai is crying 😢😢'
+    }
+    else {
+      Swal.fire({
+        title: 'Merry Xmas 🎄🎄 I love you 💕💕',
+        imageUrl: getImageUrl(),
+        backdrop: false,
+        imageWidth: 400,
+        imageHeight: 600,
+        width: 800,
+      })
+}
+  }
+})
+
+const getImageUrl = () => {
+        return new URL(`../assets/noel.jpg`, import.meta.url).href
+    }
+}
+const getMusicUrl = () => {
+        return new URL(`../assets/noel.mp3`, import.meta.url).href
+    }
+
+
+
 </script>
 
 <style>
@@ -43,7 +97,9 @@ const state = reactive({ count: 0 });
   font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
 }
 body {
-  background-color: var(--blue);
+  background-image: url('https://img.freepik.com/free-photo/beautiful-christmas-eve-concept-with-copy-space_23-2148703379.jpg?w=1380&t=st=1671713821~exp=1671714421~hmac=f4b74274aa742476763b720dd502da6aaf0f6e7047fcc45ace0907fe12f05d3e');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--white1);
   font: 1em/1.5 sans-serif;
   height: 100vh;

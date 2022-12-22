@@ -10,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['/vue', '/sweetalert2', '/vue3-audio-player', '/sweetalert2/dist/sweetalert2.min.css', '/vue3-audio-player/dist/style.css'],
+      external: ['vue', 'sweetalert2', 'vue3-audio-player', 'sweetalert2/dist/sweetalert2.min.css', 'vue3-audio-player/dist/style.css'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

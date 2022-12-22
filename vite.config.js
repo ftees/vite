@@ -6,13 +6,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    lib: {
-      // Could also be a dictionary or array of multiple entry points
-      
-      name: 'MyLib',
-      // the proper extensions will be added
-      fileName: 'my-lib',
-    },
+
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library

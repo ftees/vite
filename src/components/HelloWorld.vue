@@ -28,9 +28,9 @@
 <script setup>
 import { defineProps, reactive, ref, onMounted } from "vue";
 import Swal from 'sweetalert2'
-import 'sweetalert2/dist/sweetalert2.min.css';
+import '/sweetalert2/dist/sweetalert2.min.css';
 import AudioPlayer from 'vue3-audio-player'
-import 'vue3-audio-player/dist/style.css'
+import '/vue3-audio-player/dist/style.css'
 
 defineProps({
   msg: String,

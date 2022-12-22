@@ -5,9 +5,13 @@ specifiers:
   '@vue/compiler-sfc': ^3.0.5
   vite: ^2.4.0
   vue: ^3.0.5
+  vue-sweetalert2: ^5.0.5
+  vue3-audio-player: ^1.0.6
 
 dependencies:
   vue: 3.2.44
+  vue-sweetalert2: 5.0.5_vue@3.2.44
+  vue3-audio-player: 1.0.6
 
 devDependencies:
   '@vitejs/plugin-vue': 1.10.2_vite@2.9.15
@@ -15,6 +19,38 @@ devDependencies:
   vite: 2.9.15
 
 packages:
+
+  /@any-touch/compute/2.2.0:
+    resolution: {integrity: sha512-hrw74b/cVT8SmiKFLValmllajw+bBvTa5iUwIXFVVIJM9T3tO15zZC2QbjVz8Uwi6XjH932RDUILGMs2TNvyQg==}
+    dependencies:
+      '@any-touch/shared': 2.2.0
+      '@any-touch/vector': 2.2.0
+      tslib: 2.4.1
+    dev: false
+
+  /@any-touch/core/2.2.0:
+    resolution: {integrity: sha512-xMHAA5aLCatFto+4fQWyE4YAsyN/LsXS4mnYuVpqFYoNz8dl5FsB/TIyb9JrqMKLYMxxcZ9joqR8gDprH1lwBw==}
+    dependencies:
+      '@any-touch/shared': 2.2.0
+      any-event: 2.2.0
+    dev: false
+
+  /@any-touch/pan/2.2.0:
+    resolution: {integrity: sha512-uMkCHbTm5qWji/FvhumP9n1ZCkPU7hy864g+ZhoWZ0OWAmn7s/TKRo4UqPBfqEPUMV6obGZvatrrgBLWT6J57w==}
+    dependencies:
+      '@any-touch/compute': 2.2.0
+      '@any-touch/shared': 2.2.0
+    dev: false
+
+  /@any-touch/shared/2.2.0:
+    resolution: {integrity: sha512-2n1zWaATi/3osr/dkIUq5O7aSffKUsTM4DsIbPMW1VEO77v/rX2HkLoxt2Djzj5eCGh7An55Vw8NeA33kTTSRA==}
+    dev: false
+
+  /@any-touch/vector/2.2.0:
+    resolution: {integrity: sha512-t7pGYegIDCJl+swwsohZHZKmF71ZMt+hjwVEyhaEP6nQhcx6S7zulxnRxNp1t8s+c/JdK02Q89HnzQ4Ukg4+IA==}
+    dependencies:
+      '@any-touch/shared': 2.2.0
+    dev: false
 
   /@babel/helper-string-parser/7.19.4:
     resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}
@@ -133,6 +169,12 @@ packages:
 
   /@vue/shared/3.2.44:
     resolution: {integrity: sha512-mGZ44bnn0zpZ36nXtxbrBPno43yr96wjQE1dBEKS1Sieugt27HS4OGZVBRIgsdGzosB7vqZAvu0ttu1FDVdolA==}
+
+  /any-event/2.2.0:
+    resolution: {integrity: sha512-PB4sEiVUjL+5mLmwlAGYdI5/1ouckapxS6+RPIvrGXv9XTMav7M3k3rR/f9fwAR+e2608CTR3FOR5HrOEYTtKA==}
+    dependencies:
+      tslib: 2.4.1
+    dev: false
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
@@ -433,9 +475,17 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /sweetalert2/11.6.16:
+    resolution: {integrity: sha512-T2FO8LptErsjE4r0WMfiSk4YbeUvPadNaUZ/cADMEOnws000znrf8zFX9S5e/spvzJDyRI5En73WQyDZhGypxQ==}
+    dev: false
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
+
+  /tslib/2.4.1:
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    dev: false
 
   /vite/2.9.15:
     resolution: {integrity: sha512-fzMt2jK4vQ3yK56te3Kqpkaeq9DkcZfBbzHwYpobasvgYmP2SoAr6Aic05CsB4CzCZbsDv4sujX3pkEGhLabVQ==}
@@ -461,6 +511,15 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /vue-sweetalert2/5.0.5_vue@3.2.44:
+    resolution: {integrity: sha512-Q7+TjQxNwGruT2jfPaSKMz18HHWs81r4umEwlrrtOf/QL5Iwl1T+tUaNkcvKB7Rf9rYftubt7NnOMjfDMnDH3A==}
+    peerDependencies:
+      vue: '*'
+    dependencies:
+      sweetalert2: 11.6.16
+      vue: 3.2.44
+    dev: false
+
   /vue/3.2.44:
     resolution: {integrity: sha512-nyNtFDh+0TpRgYCUVfPD1mJ9PpIsCPXaOF4DeGNIT5vQ4X23ykflGq3Sy2P+tEt1/pQZxZnAysuRKwyhNj+Cjw==}
     dependencies:
@@ -469,4 +528,12 @@ packages:
       '@vue/runtime-dom': 3.2.44
       '@vue/server-renderer': 3.2.44_vue@3.2.44
       '@vue/shared': 3.2.44
+    dev: false
+
+  /vue3-audio-player/1.0.6:
+    resolution: {integrity: sha512-B1gWcjovJekLiW5oRSGV7K412AvLr1WiIDMdHG8y7SF40Sm+WYUC4nGMoUjFlNi/fgARhBxjMjWqEs4GWf5mvQ==}
+    dependencies:
+      '@any-touch/core': 2.2.0
+      '@any-touch/pan': 2.2.0
+      vue: 3.2.44
     dev: false

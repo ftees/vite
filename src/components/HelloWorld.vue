@@ -69,11 +69,11 @@ const onClick = () => {
 }
   }
 })
-
+}
 const getImageUrl = () => {
         return new URL(`../assets/noel.jpg`, import.meta.url).href
     }
-}
+
 const getMusicUrl = () => {
         return new URL(`../assets/noel.mp3`, import.meta.url).href
     }
